@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <v-container>
       <div style="padding-top:100px; padding-bottom:80px">
       <v-row>
@@ -29,7 +28,7 @@
           </p>
         </v-col>
         <v-col cols="12" md="7" class="text-center">
-          <img height="100%" width="100%" src="~/assets/img/bicycle.png" />
+          <img height="100%" width="100%" src="~/assets/img/Book.png" />
         </v-col>
       </v-row>
     </div>

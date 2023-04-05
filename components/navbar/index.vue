@@ -8,16 +8,16 @@
         dark
       >
         <v-row>
-          <v-col class="text-right pt-4" cols="4" md="1">
-            <img height="87px" width="74px" src="~/assets/img/logo.png" />
+          <v-col class="text-center pt-4" cols="4" md="1">
+            <img
+              height="87px"
+              width="87px"
+              src="~/assets/img/logo.png"
+              @click="to"
+            />
           </v-col>
-          <v-col cols="6" md="2" class="pt-8 pb-8">
-            <v-row class="pt-3 pb-3">
-              <h1 class="text-italic">LOREM</h1>
-              <h1 class="text-italic-color">IPSUM</h1>
-            </v-row>
-          </v-col>
-          <v-col cols="12" md="9" class="pt-9 pb-9" v-if="this.mobile > 900">
+          <v-spacer />
+          <v-col cols="12" md="8" class="pt-9 pb-9" v-if="this.mobile > 900">
             <v-btn color="withe" text size="x-large"> LOREM </v-btn>
             <v-btn color="withe" text size="x-large">
               LOREM <v-icon light right>mdi-chevron-down</v-icon>
@@ -26,7 +26,14 @@
             <v-btn color="withe" text size="x-large"> LOREM & IPSUM </v-btn>
             <v-btn color="withe" text size="x-large"> LOREM </v-btn>
           </v-col>
-          <v-col cols="2" class="pt-9 pb-9" v-else>
+          <v-col cols="2" md="1" class="pt-9 pb-9 text-right">
+            <v-badge bordered color="error" content="6" overlap>
+              <v-btn dark  icon>
+                <v-icon>mdi-cart</v-icon>
+              </v-btn>
+            </v-badge>
+          </v-col>
+          <v-col cols="2" class="pt-9 pb-9" v-if="this.mobile <= 900">
             <v-menu bottom left>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon v-bind="attrs" v-on="on">
@@ -40,7 +47,12 @@
                 </v-list-item>
 
                 <v-list-item>
-                  <v-list-item-title>LOREM <v-icon light right color="white">mdi-chevron-down</v-icon></v-list-item-title>
+                  <v-list-item-title
+                    >LOREM
+                    <v-icon light right color="white"
+                      >mdi-chevron-down</v-icon
+                    ></v-list-item-title
+                  >
                 </v-list-item>
 
                 <v-list-item>
@@ -57,7 +69,6 @@
             </v-menu>
           </v-col>
         </v-row>
-        <!-- <v-spacer></v-spacer> -->
       </v-app-bar>
     </v-col>
   </div>
@@ -77,6 +88,9 @@ export default {
   methods: {
     handleResize() {
       this.mobile = window.innerWidth;
+    },
+    to() {
+      this.$router.push("/");
     },
   },
 };

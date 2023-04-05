@@ -4,7 +4,7 @@
       <div class="" style="padding-top: 150px; padding-bottom: 150px">
         <v-row>
           <v-col cols="12" md="7">
-            <img height="100%" width="100%" src="~/assets/img/bicycle.png" />
+            <img height="100%" width="100%" src="~/assets/img/Book.png" />
           </v-col>
           <v-col cols="12" md="5">
             <v-col class="pa-8">

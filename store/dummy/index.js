@@ -27,7 +27,7 @@ export const mutations = {
 
 export const actions = {
    async getDummy({ commit }) {
-        const URL = `https://dummyjson.com/products?limit=3`;
+        const URL = `https://dummyjson.com/products?limit=8`;
         axios
             .get(URL)
             .then((response) => {

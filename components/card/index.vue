@@ -1,16 +1,10 @@
 <template>
-  <div
-    style="background-color: #d9ef0c; "
-    align="center"
-    justify="center"
-  >
-    <v-container>
+  <div style="background-color: #d9ef0c" align="center" justify="center">
       <h1 class="header" v-if="this.mobile > 900">LOREM IPSUM</h1>
       <h1 class="header-mobile" v-else>LOREM IPSUM</h1>
       <v-row>
-        <v-col v-for="product in dummy" :key="product.id">
-          <v-card class="" width="416" height="443" color="#ffffff">
-
+        <v-col v-for="product in dummy" :key="product.id" >
+          <v-card class="" width="416" height="460" color="#ffffff" to="/detailCard">
             <v-carousel hide-delimiters cycle height="236px">
               <v-carousel-item
                 v-for="(image, i) in product.images"
@@ -24,12 +18,26 @@
             </v-card-title>
 
             <v-card-text style="color: black">
+              <v-col>
+                <v-row>
+                  <v-rating
+                    :value="product.rating"
+                    color="amber"
+                    dense
+                    half-increments
+                    readonly
+                    size="14"
+                  ></v-rating>
+                  <div class="grey--text ms-4">{{ product.rating }}</div>
+                </v-row>
+              </v-col>
               <div>{{ product.description }}</div>
             </v-card-text>
+            <v-card-actions> </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
+
     <div class="pa-16"></div>
   </div>
 </template>
